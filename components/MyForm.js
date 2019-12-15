@@ -19,7 +19,7 @@ const MyForm = () => {
   return (
     <div>
       <Formik initialValues={initValues} onSubmit={submitForm}>
-        {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+        {({ values, handleChange, handleBlur, handleSubmit, isSubmitting, setFieldValue }) => (
           <form onSubmit={handleSubmit}>
             <TextField name="firstName" value={values.firstName} onChange={handleChange} onBlur={handleBlur}/>
 
