@@ -2,14 +2,16 @@ import React from "react";
 import { Formik } from "formik";
 
 const App = () => {
+
+  const initValues = { file: null };
+  
+  const onSubmit = (values, { resetForm, setSubmitting }) => {
+    console.log(values);
+  };
+
   return (
     <div className="container">
-      <Formik
-        initialValues={{ file: null }}
-        onSubmit={(values, { resetForm, setSubmitting }) => {
-          console.log(values);
-        }}
-      >
+      <Formik initialValues={initValues} onSubmit={onSubmit}>
         {({ values, handleSubmit, setFieldValue }) => {
           return (
             <form onSubmit={handleSubmit}>
