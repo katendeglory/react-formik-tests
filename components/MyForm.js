@@ -3,7 +3,7 @@ import { Formik, Field } from "formik";
 import { TextField, Button } from "@material-ui/core";
 
 const MyForm = () => {
-  const initValues = { firstName: "Bob", lastName: "Ziroll" };
+  const initValues = { firstName: "Eobard", lastName: "Thawne" };
 
   const submitForm = (data, {resetForm, setSubmitting}) => {
     console.log(data);
@@ -22,11 +22,8 @@ const MyForm = () => {
         {({ values, handleChange, handleBlur, handleSubmit, isSubmitting, setFieldValue }) => (
           <form onSubmit={handleSubmit}>
 
-            <Field />
-
-            <TextField name="firstName" value={values.firstName} onChange={handleChange} onBlur={handleBlur}/><br/><br/>
-
-            <TextField name="lastName" value={values.lastName} onChange={handleChange} onBlur={handleBlur}/>
+            <Field type="input" name="firstName" as={TextField}/><br/>
+            <Field type="input" name="lastName" as={TextField}/><br/>
  
             <br/><br/>
             <Button type="submit" variant="contained" color="primary" disabled={isSubmitting}>Submit</Button>
