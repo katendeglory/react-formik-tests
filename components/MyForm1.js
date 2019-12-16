@@ -1,11 +1,14 @@
 import React from "react";
 import { Formik, Form } from "formik";
 
+// FILE EXAMPLE
+
 const MyForm1 = () => {
   const initValues = { file: null };
 
   const onSubmit = (values, { resetForm, setSubmitting }) => {
     console.log(values);
+    resetForm();
   };
 
   return (

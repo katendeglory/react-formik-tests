@@ -2,6 +2,8 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import { TextField, Button, Checkbox , Radio} from "@material-ui/core";
 
+// BASIC EXAMPLE
+
 const MyForm = () => {
   const initValues = { firstName: "", lastName: "", getEmails: true, cookies: [], webstack:"" };
 
