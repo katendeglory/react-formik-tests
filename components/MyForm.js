@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik } from "formik";
+import { Formik, Field } from "formik";
 import { TextField, Button } from "@material-ui/core";
 
 const MyForm = () => {
@@ -21,6 +21,9 @@ const MyForm = () => {
       <Formik initialValues={initValues} onSubmit={submitForm}>
         {({ values, handleChange, handleBlur, handleSubmit, isSubmitting, setFieldValue }) => (
           <form onSubmit={handleSubmit}>
+
+            <Field />
+
             <TextField name="firstName" value={values.firstName} onChange={handleChange} onBlur={handleBlur}/><br/><br/>
 
             <TextField name="lastName" value={values.lastName} onChange={handleChange} onBlur={handleBlur}/>
