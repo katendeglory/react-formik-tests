@@ -1,3 +1,5 @@
-h1, p {
-  font-family: Lato;
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+* {
+  font-family: 'Raleway', sans-serif;
 }
