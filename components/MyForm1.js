@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form } from "formik";
 
-const App = () => {
+const MyForm1 = () => {
   const initValues = { file: null };
 
   const onSubmit = (values, { resetForm, setSubmitting }) => {
@@ -21,3 +21,5 @@ const App = () => {
     </div>
   );
 };
+
+export default MyForm1;
