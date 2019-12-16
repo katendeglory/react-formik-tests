@@ -2,14 +2,14 @@ import React from "react";
 import { Formik, Form, useField } from "formik";
 import { Button, FormControlLabel , Radio} from "@material-ui/core";
 
-const Radio = ({label, ...props}) => {
+const MyRadio = ({label, ...props}) => {
   const [field, meta] = useField(props);
   return <FormControlLabel {...field} control={<Radio/>} label={label} />
 }
 
 const MyForm2 = () => {
 
-  const initValues = { webstack:"" };
+  const initValues = { webStack:"" };
 
   const submitForm = (values, actions) => {
     console.log(values);
