@@ -22,8 +22,8 @@ const MyForm = () => {
         {({ values, handleChange, handleBlur, handleSubmit, isSubmitting, setFieldValue }) => (
           <form onSubmit={handleSubmit}>
 
-            <Field type="input" name="firstName" as={TextField} placeholder="First Name" /><br/><br/>
-            <Field type="input" name="lastName" as={TextField} placeholder="Last Name" />
+            <Field name="firstName" as={TextField} placeholder="First Name" /><br/><br/>
+            <Field name="lastName" as={TextField} placeholder="Last Name" />
  
             <br/><br/>
             <Button type="submit" variant="contained" color="primary" disabled={isSubmitting}>Submit</Button>
