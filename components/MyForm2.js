@@ -1,46 +1,38 @@
 import React from "react";
-import { Formik, Form, Field } from "formik";
-import { TextField, Button, Checkbox , Radio} from "@material-ui/core";
+import { Formik, Form, Field, useField } from "formik";
+import { Button, FormControlLabel , Radio} from "@material-ui/core";
 
-const MyForm = () => {
-  const initValues = { firstName: "", lastName: "", getEmails: true, cookies: [], webstack:"" };
+const Radio = ({label, ...props}) => {
+  const [field, meta] = useField(props);
+  return <FormControlLabel {...field} control={<Radio/>} label={label} />
+}
 
-  const submitForm = (values, {resetForm, setSubmitting}) => {
+const MyForm2 = () => {
+
+  const initValues = { webstack:"" };
+
+  const submitForm = (values, actions) => {
     console.log(values);
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      resetForm({});
-    }, 2000);
+    actions.resetForm({});
   };
 
   return (
     <div>
-      <Formik initialValues={initValues} onSubmit={submitForm}>
-        {({ values, isSubmitting, setFieldValue }) => (
+      <Formik initialValues={initValues} onSubmit={submitForm}>{
+        formik => (
           <Form>
-            <Field type="text" name="firstName" as={TextField} placeholder="First Name" /><br/><br/>
-            <Field type="text" name="lastName" as={TextField} placeholder="Last Name" /><br/><br/>
-            
-            <Field type="checkbox" name="getEmails" as={Checkbox} />Get Emails<br/><br/>
-
-            <div>Cookies:</div>
-            <Field type="checkbox" name="cookies" as={Checkbox} value="Chocolate Chips" />Chocolate Chips<br/>
-            <Field type="checkbox" name="cookies" as={Checkbox} value="Sneaker Doodle" />Sneaker Doodle<br/>
-            <Field type="checkbox" name="cookies" as={Checkbox} value="Candy King" />Candy King<br/><br/>
-
             <div>Web Stack:</div>
             <Field type="radio" name="webStack" as={Radio} value="Front End"/>Front End<br/>
             <Field type="radio" name="webStack" as={Radio} value="Back End"/>Back End<br/>
             <Field type="radio" name="webStack" as={Radio} value="FullStack"/>FullStack<br/>
 
-            <Button type="submit" variant="contained" disabled={isSubmitting}>Submit</Button><br/><br/>
-            <pre>{JSON.stringify(values, null, 2)}</pre>
+            <Button type="submit" variant="contained">Submit</Button><br/><br/>
+            <pre>{JSON.stringify(formik.values, null, 2)}</pre>
           </Form>
-        )}
-      </Formik>
+        )
+      }</Formik>
     </div>
   );
 };
 
-export default MyForm;
+export default MyForm2;
