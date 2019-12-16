@@ -2,11 +2,8 @@ import React from "react";
 import { Formik, Form, useField } from "formik";
 import { Button, FormControlLabel , Radio} from "@material-ui/core";
 
-const MyRadio = (props) => {
-  
-  const {label, ...props} = props;
+const MyRadio = ({label, ...props}) => {
   const [field, meta] = useField(props);
-
   return <FormControlLabel {...field} control={<Radio/>} label={label} />
 }
 
