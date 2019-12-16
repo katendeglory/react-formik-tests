@@ -6,7 +6,6 @@ import "./style.css";
 const App = () => {
   return (
     <div>
-      <h1>Welcome to My APP</h1>
       <MyForm />
     </div>
   );
