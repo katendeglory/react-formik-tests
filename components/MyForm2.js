@@ -22,9 +22,9 @@ const MyForm2 = () => {
         formik => (
           <Form>
             <div>Web Stack:</div>
-            <Field type="radio" name="webStack" as={Radio} value="Front End"/>Front End<br/>
-            <Field type="radio" name="webStack" as={Radio} value="Back End"/>Back End<br/>
-            <Field type="radio" name="webStack" as={Radio} value="FullStack"/>FullStack<br/>
+            <MyRadio type="radio" name="webStack" label="Front End" value="Front End"/><br/>
+            <MyRadio type="radio" name="webStack" label="Back End" value="Back End"/><br/>
+            <MyRadio type="radio" name="webStack" label="FullStack" value="FullStack"/><br/>
 
             <Button type="submit" variant="contained">Submit</Button><br/><br/>
             <pre>{JSON.stringify(formik.values, null, 2)}</pre>
