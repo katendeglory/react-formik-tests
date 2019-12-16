@@ -6,8 +6,6 @@ import { Button, FormControlLabel , Radio} from "@material-ui/core";
 
 const MyRadio = ({label, ...props}) => {
   const [field, meta] = useField(props);
-  // console.log(props);
-  // console.log(field);
   return <FormControlLabel {...field} control={<Radio/>} label={label} />
 }
 
