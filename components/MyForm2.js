@@ -1,17 +1,24 @@
 import React from "react";
 import { Formik, Form, useField } from "formik";
-import { Button, FormControlLabel , Radio} from "@material-ui/core";
+import { TextField,Button, FormControlLabel , Radio} from "@material-ui/core";
 
 //CUSTOM INPUT ELEMENT
 
 const MyRadio = ({label, ...props}) => {
   const [field, meta] = useField(props);
+  //console.log({label,...props})
   return <FormControlLabel {...field} control={<Radio/>} label={label} />
+}
+
+const MyTextField = ({placeholder,...props}) => {
+  const [field, meta] = useField(props);
+  const errorText = meta.error && meta.touched ? meta.error : "";
+  return <TextField {...field} placeholder={placeholder} helperText={errorText} />
 }
 
 const MyForm2 = () => {
 
-  const initValues = { webStack:"" };
+  const initValues = { webStack:"",firstName:"" };
 
   const submitForm = (values, actions) => {
     console.log(values);
@@ -27,6 +34,8 @@ const MyForm2 = () => {
             <MyRadio type="radio" name="webStack" label="Front End" value="Front End"/><br/>
             <MyRadio type="radio" name="webStack" label="Back End" value="Back End"/><br/>
             <MyRadio type="radio" name="webStack" label="FullStack" value="FullStack"/><br/>
+
+            <MyTextField type="text" name="firstName" placeholder="First Name" /><br/><br/>
 
             <Button type="submit" variant="contained">Submit</Button><br/><br/>
             <pre>{JSON.stringify(formik.values, null, 2)}</pre>
