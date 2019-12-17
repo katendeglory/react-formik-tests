@@ -13,7 +13,7 @@ const MyRadio = ({label, ...props}) => {
 const MyTextField = ({placeholder,...props}) => {
   const [field, meta] = useField(props);
   const errorText = meta.error && meta.touched ? meta.error : "";
-  return <TextField {...field} placeholder={placeholder} helperText={errorText} />
+  return <TextField {...field} placeholder={placeholder} helperText={errorText} error={!!errorText} />
 }
 
 const MyForm2 = () => {
