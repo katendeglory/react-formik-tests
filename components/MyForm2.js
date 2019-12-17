@@ -26,7 +26,11 @@ const MyForm2 = () => {
   };
 
   const validate = (values) => {
+    const errors = {};
 
+    if(values.firstName.includes('Pierre')) errors.firstName = "Pierre already Exists";
+
+    return errors;
   }
 
   return (
