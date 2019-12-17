@@ -46,6 +46,7 @@ const MyForm2 = () => {
             <MyTextField type="text" name="firstName" placeholder="First Name" /><br/><br/>
 
             <Button type="submit" variant="contained">Submit</Button><br/><br/>
+            <pre>{JSON.stringify(formik.errors, null, 2)}</pre>
             <pre>{JSON.stringify(formik.values, null, 2)}</pre>
           </Form>
         )
