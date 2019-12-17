@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form, useField } from "formik";
 import { TextField,Button, FormControlLabel , Radio} from "@material-ui/core";
 
-//CUSTOM INPUT ELEMENT
+//CUSTOM INPUT ELEMENT & VALIDATION
 
 const MyRadio = ({label, ...props}) => {
   const [field, meta] = useField(props);
@@ -25,9 +25,13 @@ const MyForm2 = () => {
     actions.resetForm({});
   };
 
+  const validate = (values) => {
+
+  }
+
   return (
     <div>
-      <Formik initialValues={initValues} onSubmit={submitForm}>{
+      <Formik initialValues={initValues} onSubmit={submitForm} validate={validate}>{
         formik => (
           <Form>
             <div>Web Stack:</div>
