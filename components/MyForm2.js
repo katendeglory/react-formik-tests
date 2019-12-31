@@ -6,7 +6,6 @@ import { TextField,Button, FormControlLabel , Radio} from "@material-ui/core";
 
 const MyRadio = ({label, ...props}) => {
   const [field, meta] = useField(props);
-  //console.log({label,...props})
   return <FormControlLabel {...field} control={<Radio/>} label={label} />
 }
 
@@ -27,9 +26,7 @@ const MyForm2 = () => {
 
   const validate = (values) => {
     const errors = {};
-
     if(values.firstName.includes('Pierre')) errors.firstName = "Pierre already Exists";
-
     return errors;
   }
 
