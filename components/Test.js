@@ -8,14 +8,10 @@ const Test = () => {
   };
 
   const onSubmit = (values, actions) => {
-    console.log(values.image);
-
     values.image = Resizer.imageFileResizer(
       values.image, 500, 500, "JPEG", 100, 0, uri => console.log(uri), "blob"
     );
-    
     console.log(values.image);
-
     actions.resetForm();
   };
 
@@ -34,10 +30,10 @@ const Test = () => {
               name="image"
               type="file"
               onChange={e => {
-                Resizer.imageFileResizer(
-                  event.target.files[0], 500, 500, "JPEG", 100, 0, 
-                  uri => console.log(uri), "blob"
-                );
+                // Resizer.imageFileResizer(
+                //   event.target.files[0], 500, 500, "JPEG", 100, 0, 
+                //   uri => console.log(uri), "blob"
+                // );
                 setFieldValue("image", e.currentTarget.files[0]);
               }}
             />
