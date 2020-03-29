@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Formik,ErrorMessage } from "formik";
 import Resizer from "react-image-file-resizer";
 
-const Test = () => {
+const ResizeImage = () => {
   const initalValues = {
     image: ""
   };
@@ -35,7 +35,7 @@ const Test = () => {
                   100,
                   0,
                   uri => {//The uri is the blob file
-                   //A Blob() is almost a File() - it's just missing the two properties below    which we will add
+                   //A Blob() is almost a File() - it's just missing the two properties below which we will add
                     uri.lastModifiedDate = new Date();
                     uri.fileName = "a-cool-danbo"
                     formik.setFieldValue("image", uri);
@@ -57,4 +57,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default ResizeImage;
