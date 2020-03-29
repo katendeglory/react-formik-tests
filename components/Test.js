@@ -1,6 +1,6 @@
 import React from "react";
-
 import { Form, Formik } from "formik";
+import Resizer from "react-image-file-resizer";
 
 const Test = () => {
   const iVal = {
@@ -8,7 +8,7 @@ const Test = () => {
   };
 
   const onSubmit = (values, actions) => {
-    console.log(values);
+    console.log(values.image.size / (1024 * 1024) + "MB");
     actions.resetForm();
   };
 
@@ -27,7 +27,18 @@ const Test = () => {
               name="image"
               type="file"
               onChange={e => {
-                console.log(e.target);
+                Resizer.imageFileResizer(
+                  event.target.files[0],
+                  500,
+                  500,
+                  "JPEG",
+                  100,
+                  0,
+                  uri => {
+                    console.log(uri);
+                  },
+                  "base64"
+                );
                 setFieldValue("image", e.currentTarget.files[0]);
               }}
             />
