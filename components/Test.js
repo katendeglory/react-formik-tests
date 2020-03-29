@@ -2,13 +2,6 @@ import React from "react";
 import { Form, Formik } from "formik";
 import Resizer from "react-image-file-resizer";
 
-function blobToFile(theBlob, fileName) {
-  //A Blob() is almost a File() - it's just missing the two properties below which we will add
-  theBlob.lastModifiedDate = new Date();
-  theBlob.name = fileName;
-  return theBlob;
-}
-
 const Test = () => {
   const iVal = {
     image: ""
