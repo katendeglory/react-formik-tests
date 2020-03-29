@@ -8,7 +8,8 @@ const Test = () => {
   };
 
   const onSubmit = (values, actions) => {
-    console.log(values.image.size / (1024 * 1024) + "MB");
+    // console.log(values.image.size / (1024 * 1024) + "MB");
+    console.log(values);
     actions.resetForm();
   };
 
@@ -34,14 +35,14 @@ const Test = () => {
                   "JPEG",
                   100,
                   0,
-                  uri => {
-                    console.log(uri);
-                  },
-                  "base64"
+                  uri => console.log(uri),
+                  // "base64"
+                  "blob"
                 );
                 setFieldValue("image", e.currentTarget.files[0]);
               }}
             />
+
             <br />
             <br />
             <button type="submit">submit</button>
