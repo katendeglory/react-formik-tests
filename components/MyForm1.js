@@ -16,7 +16,11 @@ const MyForm1 = () => {
       <Formik initialValues={initValues} onSubmit={onSubmit}>
         {({ values, setFieldValue }) => (
           <Form>
-            <input name="file" type="file" onChange={e => setFieldValue("file", e.currentTarget.files[0])}/>
+            <input
+              name="file"
+              type="file"
+              onChange={e => setFieldValue("file", e.currentTarget.files[0])}
+            />
             <button type="submit">submit</button>
           </Form>
         )}
