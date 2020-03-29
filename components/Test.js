@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Formik } from "formik";
+import { Form, Formik,ErrorMessage } from "formik";
 import Resizer from "react-image-file-resizer";
 
 const Test = () => {
@@ -14,7 +14,7 @@ const Test = () => {
 
   let validate = values => {
     const errors = {};
-    //field validation occurs here...
+    if(!values.image) errors.image = "Image is missing!"
     return errors;
   };
 
@@ -43,8 +43,10 @@ const Test = () => {
                 );
               }}
             />
-
+            
             <br />
+            <ErrorMessage name="image"/>
+
             <br />
             <button type="submit">submit</button>
           </Form>
