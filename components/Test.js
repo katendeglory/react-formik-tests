@@ -27,11 +27,12 @@ const Test = () => {
               name="image"
               type="file"
               onChange={e => {
-                console.log(e.currentTarget.files[0]);
-                setFieldValue("image", e.currentTarget.files[0])
+                console.log(e.target);
+                setFieldValue("image", e.currentTarget.files[0]);
               }}
             />
-            <br/><br/><br/>
+            <br />
+            <br />
             <button type="submit">submit</button>
           </Form>
         )}
