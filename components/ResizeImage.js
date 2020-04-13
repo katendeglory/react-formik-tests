@@ -18,6 +18,7 @@ const ResizeImage = () => {
     return errors;
   };
 
+  //The uri is the blob file. A Blob() is almost a File() - it's just missing the two properties below which we will add
   return (
     <div className="">
       <Formik initialValues={initalValues} onSubmit={onSubmit} validate={validate}>
@@ -28,14 +29,8 @@ const ResizeImage = () => {
               type="file"
               onChange={e => {
                 Resizer.imageFileResizer(
-                  event.target.files[0],
-                  500,
-                  500,
-                  "JPEG",
-                  100,
-                  0,
-                  uri => {//The uri is the blob file
-                   //A Blob() is almost a File() - it's just missing the two properties below which we will add
+                  event.target.files[0], 500, 500, "JPEG", 100, 0,
+                  uri => {
                     uri.lastModifiedDate = new Date();
                     uri.fileName = "a-cool-danbo"
                     formik.setFieldValue("image", uri);
